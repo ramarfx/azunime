@@ -1,0 +1,1111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #161616;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  padding: 1rem 3rem;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0.75rem 1rem;
+  }
+}
+#register .right .judul, #login .right .judul, #navbar .flex .logo {
+  flex-grow: 1;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#register .right .judul span, #login .right .judul span, #navbar .flex .logo span {
+  color: #4AB868;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4AB868;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f2f2f;
+}
+
+#navbar {
+  width: 100vw;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: "montserrat", sans-serif;
+  position: fixed;
+  z-index: 99;
+}
+#navbar .flex {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+#navbar .flex .hamburger {
+  font-size: 2rem;
+  display: none;
+}
+#navbar .flex nav.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 10;
+}
+#navbar .flex nav.navbar .nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+#navbar .flex nav.navbar .nav-menu ul li {
+  margin: 0 1rem;
+}
+#navbar .flex nav.navbar .nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#navbar .flex nav.navbar .nav-menu ul li.dropdown {
+  position: relative;
+}
+#navbar .flex nav.navbar .nav-menu ul li.dropdown button {
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+#navbar .flex nav.navbar .nav-menu ul li.dropdown button span i {
+  transition: 0.2s ease-out;
+}
+#navbar .flex nav.navbar .nav-menu ul li.dropdown .dropdown-item {
+  position: absolute;
+  display: none;
+  top: 160%;
+  z-index: -1;
+  flex-direction: column;
+  background-color: #4AB868;
+  padding: 1rem 0;
+  border-radius: 0 10px 10px 10px;
+  width: 150px;
+}
+#navbar .flex nav.navbar .nav-menu ul li.dropdown .dropdown-item a {
+  display: inline-block;
+  padding: 5px 1rem;
+}
+#navbar .flex nav.navbar .nav-menu ul li.dropdown .dropdown-item a:hover {
+  background-color: #56d678;
+}
+#navbar .flex nav.navbar .nav-user {
+  display: flex;
+  align-items: center;
+}
+#navbar .flex nav.navbar .nav-user input {
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #303030;
+  border: none;
+  color: white;
+}
+#navbar .flex nav.navbar .nav-user .icon {
+  display: flex;
+  align-items: center;
+}
+#navbar .flex nav.navbar .nav-user i {
+  margin: 0 1rem;
+}
+#navbar .flex nav.navbar .nav-user p {
+  color: #4AB868;
+}
+#navbar .flex nav.navbar .nav-user i.fa-user {
+  font-size: 1rem;
+}
+
+.active {
+  display: flex !important;
+}
+
+@media screen and (max-width: 940px) {
+  #navbar .flex .hamburger {
+    display: block;
+  }
+  #navbar .flex nav.navbar {
+    display: none;
+    position: absolute;
+    align-items: flex-start;
+    top: 105%;
+    right: 0;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 1rem 0 1rem 1rem;
+    flex-direction: column;
+    border: 1px solid #4AB868;
+  }
+  #navbar .flex nav.navbar .nav-menu ul {
+    flex-direction: column;
+  }
+  #navbar .flex nav.navbar .nav-menu ul li {
+    margin: 1rem 0rem;
+  }
+  #navbar .flex nav.navbar .nav-menu ul li.dropdown .dropdown-item {
+    left: -166px;
+    top: 100%;
+    border-radius: 10px 0 10px 10px;
+  }
+  #navbar .flex nav.navbar .nav-user {
+    flex-direction: column-reverse;
+  }
+  #navbar .flex nav.navbar .nav-user .icon {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+  #navbar .flex nav.navbar .nav-user i {
+    margin: 1rem 1rem 1rem 0;
+  }
+}
+.dropdown-active {
+  transform: rotate(180deg);
+}
+
+#jumbotron {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  background: url(../img/banner.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 40%;
+}
+#jumbotron .overlay {
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 6%, 0.6);
+}
+
+#main {
+  padding-top: 1rem;
+}
+#main .flex {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 1rem;
+}
+#main .profile {
+  width: 300px;
+  background-color: #222222;
+  color: white;
+  height: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#main .profile .profile-edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  font-size: 1.35rem;
+  color: #8C8C8C;
+  cursor: pointer;
+}
+#main .profile .profile-txt {
+  margin: 1rem 0;
+}
+#main .profile .profile-picture {
+  margin-top: -50px;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 7px solid #222222;
+}
+#main .profile .profile-picture img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center top;
+     object-position: center top;
+}
+#main .profile .profile-status {
+  background-color: #4AB868;
+  padding: 10px 30px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+#main .profile .profile-login {
+  color: #8C8C8C;
+  font-size: 14px;
+  font-weight: 600;
+}
+#main .profile .profile-tambah {
+  padding: 0.5rem;
+}
+#main .profile .profile-tambah a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+#main .profile .profile-tambah a span {
+  margin-right: 0.5rem;
+}
+#main .profile .profile-tambah a span i {
+  color: #4AB868;
+  font-size: 1rem;
+}
+#main .profile .profile-tambah a span i.fa-right-from-bracket {
+  color: #ff4d4d;
+}
+#main .anime-list {
+  width: calc(100% - 315px);
+  border-radius: 10px;
+  background-color: #222222;
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  position: relative;
+}
+#main .anime-list .genre-list {
+  overflow-x: auto;
+}
+#main .anime-list .genre-list ul {
+  display: flex;
+  gap: 4rem;
+}
+#main .anime-list .genre-list ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+#main .anime-list .genre-list ul li a {
+  color: #8C8C8C;
+  white-space: nowrap;
+  text-decoration: none;
+}
+#main .anime-list .genre-list ul li:last-child {
+  margin-right: 0;
+}
+#main .anime-list .genre-list ul li:hover a {
+  color: white;
+}
+#main .anime-list .genre-list::-webkit-scrollbar {
+  height: 5px;
+}
+#main .anime-list .genre-list::-webkit-scrollbar-thumb {
+  background: #494949;
+}
+#main .anime-list .genre-list::-webkit-scrollbar-track {
+  background: #2f2f2f;
+}
+#main .anime {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+}
+#main .anime .anime-inner {
+  flex-basis: 150px;
+  position: relative;
+}
+#main .anime .anime-inner img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  -o-object-position: center top;
+     object-position: center top;
+  vertical-align: middle;
+  transition: filter 0.3s ease-in-out;
+}
+#main .anime .anime-inner .profile-edit {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 20px;
+  z-index: 5;
+  font-size: 1rem;
+  color: #8C8C8C;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+#main .anime .anime-inner .profile-edit:hover {
+  color: #4AB868;
+}
+#main .anime .anime-inner .overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "poppins", sans-serif;
+  transition: opacity 0.3s, filter 0.3s ease-in-out;
+}
+#main .anime .anime-inner .overlay .episode {
+  padding: 5px 10px;
+  background-color: rgba(100, 100, 100, 0.508);
+  border-radius: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+#main .anime .anime-inner .overlay .judul {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 2px 0 5px 0;
+}
+#main .anime .anime-inner .overlay .genre {
+  font-size: 12px;
+  color: #c5c5c5;
+}
+#main .anime .anime-inner .overlay .play {
+  margin-top: 5px;
+  padding: 5px 20px;
+  background-color: rgba(100, 100, 100, 0.508);
+  border-radius: 10px;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#main .anime .anime-inner .overlay .play:hover {
+  background-color: #4AB868;
+}
+#main .anime .anime-inner:hover img {
+  filter: brightness(30%);
+}
+#main .anime .anime-inner:hover .overlay {
+  opacity: 1;
+}
+#main .anime .anime-inner:hover .profile-edit {
+  opacity: 1;
+}
+#main .pagination {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+#main .pagination a, #main .pagination span {
+  color: #8C8C8C;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+}
+#main .pagination a:hover {
+  color: #acacac;
+}
+
+@media screen and (max-width: 768px) {
+  #main .flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #main .profile {
+    width: 400px;
+  }
+  #main .profile .profile-picture {
+    width: 180px;
+    height: 180px;
+    margin-top: -80px;
+  }
+  #main .anime-list {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  #main .anime-list .genre-list {
+    overflow-x: auto;
+  }
+  #main .anime-list .genre-list ul {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  #main .anime-list .genre-list ul li {
+    margin-bottom: 10px;
+    scroll-snap-align: start;
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  #main .anime .anime-inner .overlay {
+    gap: 2px;
+    padding: 5px;
+  }
+  #main .anime .anime-inner .overlay .episode {
+    font-size: 12px;
+  }
+  #main .anime .anime-inner .overlay .judul {
+    font-size: 12px;
+  }
+  #main .anime .anime-inner .overlay .play {
+    font-size: 12px;
+  }
+  #main .flex .profile {
+    width: 100%;
+  }
+  #main .flex .anime-list .anime {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  #main .flex .genre-list::-webkit-scrollbar {
+    height: 3px;
+  }
+}
+@media screen and (max-width: 330px) {
+  #main .flex .profile {
+    width: 100%;
+  }
+  #main .flex .anime-list .anime {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #8C8C8C;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  margin-top: 300px;
+  padding: 2rem;
+  font-size: 14px;
+}
+#footer p {
+  font-weight: 600;
+}
+#footer .sosmed {
+  flex-grow: 2;
+  text-align: center;
+}
+#footer .sosmed i {
+  margin: 0 0.5rem;
+}
+#footer .sosmed a {
+  color: #8C8C8C;
+  text-decoration: none;
+}
+#footer .right {
+  font-weight: 600;
+  display: flex;
+  gap: 2rem;
+}
+#footer a {
+  color: #8C8C8C;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: #ababab;
+}
+
+@media screen and (max-width: 768px) {
+  #footer {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+}
+#login .flex {
+  display: flex;
+}
+#login .left {
+  width: 40%;
+  height: 100vh;
+  background-image: url(../img/login.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+}
+#login .right {
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem;
+  background: #161616;
+  color: white;
+  text-align: center;
+}
+#login .right .judul {
+  font-size: 2.5rem;
+}
+#login .right .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 2;
+  width: 50%;
+}
+#login .right .login h2 {
+  margin-bottom: 30px;
+}
+#login .right .login .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+#login .right .login .login-form input {
+  padding: 0.75rem 1rem;
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+#login .right .login .login-form ::-moz-placeholder {
+  color: #8C8C8C;
+}
+#login .right .login .login-form ::placeholder {
+  color: #8C8C8C;
+}
+#login .right .login .login-form input:focus {
+  outline: none;
+}
+#login .right .login .login-form p.error {
+  color: red;
+}
+#login .right .login .login-form .remember {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+#login .right .login .login-form .remember input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+#login .right .login .login-form .remember .checkmark {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  transform: scale(0.5);
+  border-radius: 5px;
+}
+#login .right .login .login-form .remember input:checked ~ .checkmark {
+  background-color: #4AB868;
+}
+#login .right .login .login-form .remember .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+#login .right .login .login-form .remember input:checked ~ .checkmark:after {
+  display: block;
+}
+#login .right .login .login-form .remember .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+#login .right .login .login-form .remember label {
+  margin-left: 1.5rem;
+  font-size: 0.75rem;
+}
+#login .right .login .login-form button {
+  margin-top: 10px;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #1A231C;
+  color: #4AB868;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+#login .right .login .login-form button:hover {
+  background-color: #4AB868;
+  color: white;
+}
+#login .right .login .login-form .register {
+  font-size: 0.75rem;
+  color: #8C8C8C;
+  text-decoration: none;
+}
+#login .right .login .login-form .register span {
+  color: white;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  #login .flex {
+    display: block;
+    position: relative;
+  }
+  #login .left {
+    width: 100%;
+    height: 100vh;
+  }
+  #login .left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8) 40%, rgba(74, 184, 103, 0.8) 60%);
+  }
+  #login .right {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  #login .right .judul {
+    margin-bottom: 5rem;
+  }
+  #login .right .login {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #login .right {
+    padding: 2rem;
+  }
+}
+#register .flex {
+  display: flex;
+}
+#register .left {
+  width: 40%;
+  height: 100vh;
+  background-image: url(../img/register.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+}
+#register .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem;
+  width: 60%;
+  height: 100vh;
+  background: #161616;
+  color: white;
+  text-align: center;
+}
+#register .right .judul {
+  font-size: 2.5rem;
+}
+#register .right .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 2;
+  width: 50%;
+}
+#register .right .login h2 {
+  margin-bottom: 30px;
+}
+#register .right .login .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+#register .right .login .login-form input {
+  padding: 0.75rem 1rem;
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 10px;
+  color: #8C8C8C;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+#register .right .login .login-form input:focus {
+  outline: none;
+}
+#register .right .login .login-form button {
+  margin-top: 10px;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #1A231C;
+  color: #4AB868;
+  border: none;
+  transition: 0.2s ease-out;
+}
+#register .right .login .login-form button:hover {
+  background-color: #4AB868;
+  color: white;
+}
+#register .right .login .login-form .register {
+  font-size: 0.75rem;
+  color: #8C8C8C;
+  text-decoration: none;
+}
+#register .right .login .login-form .register span {
+  color: white;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  #register .flex {
+    display: block;
+    position: relative;
+  }
+  #register .left {
+    width: 100%;
+    height: 100vh;
+  }
+  #register .left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 40%, rgba(74, 184, 103, 0.5));
+  }
+  #register .right {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  #register .right .judul {
+    margin-bottom: 5rem;
+  }
+  #register .right .login {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #register .right {
+    padding: 2rem;
+  }
+}
+#tambah {
+  width: 50%;
+  max-width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #222222;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+#tambah .kembali {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #2f2f2f;
+}
+#tambah .kembali i {
+  color: #8C8C8C;
+}
+#tambah h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 4rem;
+}
+#tambah .flex {
+  display: flex;
+  gap: 2rem;
+}
+#tambah .flex .image {
+  flex-basis: 200px;
+  flex-shrink: 0;
+  height: 300px;
+  background-color: #8C8C8C;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+#tambah .flex .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#tambah .flex .image input {
+  display: none;
+}
+#tambah .flex .image .tambah-file {
+  text-align: center;
+  color: white;
+}
+#tambah .flex .image .tambah-file i {
+  font-size: 2rem;
+}
+#tambah .flex .image .ubah-file {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.3s ease-out;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  flex-direction: column;
+}
+#tambah .flex .image:hover .ubah-file {
+  opacity: 1;
+}
+#tambah .flex .deskripsi {
+  width: 70%;
+}
+#tambah .flex .deskripsi input {
+  padding: 0.75rem 1rem;
+  background-color: #4C4C4C;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+#tambah .flex .deskripsi .select {
+  padding-right: 1rem;
+  background-color: #4C4C4C;
+  border-radius: 10px;
+}
+#tambah .flex .deskripsi select {
+  padding: 0.75rem 1rem;
+  background-color: #4C4C4C;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+}
+#tambah .flex .deskripsi select option[disabled] {
+  color: #8C8C8C;
+}
+#tambah .flex .deskripsi select:focus {
+  outline: none;
+  border: none;
+}
+#tambah .flex .deskripsi p {
+  color: #f83d3d;
+  font-size: 0.75rem;
+}
+#tambah .flex .deskripsi ::-moz-placeholder {
+  color: #8C8C8C;
+}
+#tambah .flex .deskripsi ::placeholder {
+  color: #8C8C8C;
+}
+#tambah .flex .deskripsi input:focus {
+  outline: none;
+}
+#tambah .flex .deskripsi input[type=number]::-webkit-inner-spin-button,
+#tambah .flex .deskripsi input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#tambah .flex .deskripsi input[type=number] {
+  -moz-appearance: textfield; /* Untuk Firefox */
+}
+#tambah .flex .deskripsi button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+#tambah .flex .deskripsi button[type=submit] {
+  background-color: #4AB868;
+}
+#tambah .flex .deskripsi button[name=hapus] {
+  background-color: #f83d3d;
+}
+
+@media screen and (max-width: 940px) {
+  #tambah {
+    width: 80%;
+    top: 50%;
+  }
+  #tambah .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  #tambah .flex .image {
+    flex-basis: 300px;
+    width: 200px;
+  }
+  #tambah .flex .deskripsi {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  body {
+    height: 100vh;
+  }
+  #tambah {
+    width: 80%;
+    top: 55%;
+  }
+  #tambah h2 {
+    margin-bottom: 2rem;
+  }
+  #tambah a {
+    display: none;
+  }
+  #tambah .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  #tambah .flex .image {
+    flex-basis: 250px;
+    width: 150px;
+  }
+  #tambah .flex .image .tambah-file {
+    font-size: 12px;
+  }
+  #tambah .flex .image .tambah-file i {
+    font-size: 1.25rem;
+  }
+  #tambah .flex .deskripsi {
+    width: 100%;
+  }
+  #tambah .flex .deskripsi input {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  #tambah .flex .deskripsi button {
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+  }
+  #tambah .flex .deskripsi p {
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  #tambah .flex .deskripsi ::-moz-placeholder {
+    font-size: 0.75rem;
+  }
+  #tambah .flex .deskripsi ::placeholder {
+    font-size: 0.75rem;
+  }
+}
+#maintenance {
+  width: 80%;
+  margin: auto;
+  height: calc(100vh - 80.8px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+#maintenance .left {
+  width: 50%;
+}
+#maintenance .left .title {
+  color: #4AB868;
+  font-size: 5rem;
+}
+#maintenance .left p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+#maintenance .left a {
+  padding: 0.5rem 1rem;
+  background-color: #4AB868;
+  text-decoration: none;
+  color: white;
+  margin-top: 1rem;
+  display: inline-block;
+  border-radius: 10px;
+}
+#maintenance .right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 576px) {
+  #maintenance {
+    flex-direction: column-reverse;
+  }
+  #maintenance .left {
+    width: 90%;
+    text-align: center;
+  }
+  #maintenance .left .title {
+    font-size: 6rem;
+  }
+  #maintenance .left p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  #maintenance .right {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */

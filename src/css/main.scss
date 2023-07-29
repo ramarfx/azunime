@@ -1,0 +1,66 @@
+//color
+$primary: #1e1e1e;
+$secondary: #4AB868;
+$primary-2:#222222;
+$primary-3:#4C4C4C;
+$text-secondary:#8C8C8C;
+
+//font family
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Poppins&display=swap');
+
+
+//root && global class
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing:border-box;
+}
+body{
+   background-color: #161616;
+   font-family: 'Montserrat', sans-serif;
+}
+.container{
+   padding: 1rem 3rem;
+}
+
+//Untuk handphone
+@media screen and (max-width: 576px) {
+  .container{
+   padding: 0.75rem 1rem;
+  }
+}
+
+%logo{
+   flex-grow: 1;
+   color: white;
+   text-decoration: none;
+   font-weight: 600;
+   font-size: 1.5rem;
+   cursor: pointer;
+   
+   span{
+      color: $secondary;
+   }
+}
+
+::-webkit-scrollbar{
+   width: 5px;
+   height: 3px;
+}
+::-webkit-scrollbar-thumb{
+   background: $secondary;
+}
+::-webkit-scrollbar-track {
+   background: #2f2f2f; 
+}
+
+@import "component/navbar";
+@import "component/jumbotron";
+@import "component/content";
+@import "component/footer";
+
+//login
+@import "component/login";
+@import "component/register";
+@import "component/tambah";
+@import "component/maintenance";

@@ -1,0 +1,60 @@
+#maintenance{
+   width: 80%;
+   margin: auto;
+   height: calc(100vh - 80.8px);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   color: white;
+   font-family: 'Montserrat',sans-serif;
+
+   .left{
+      width: 50%;
+
+      .title{
+         color: $secondary;
+         font-size: 5rem;
+      }
+      p{
+         font-size: 2rem;
+         font-weight: 600;
+      }
+      a{
+         padding: .5rem 1rem;
+         background-color: $secondary;
+         text-decoration: none;
+         color: white;
+         margin-top: 1rem;
+         display: inline-block;
+         border-radius: 10px;
+      }
+   }
+
+   .right{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+   }
+}
+
+//Untuk handphone
+@media screen and (max-width: 576px) {
+  #maintenance{
+   flex-direction: column-reverse;
+
+   .left{
+      width: 90%;
+      text-align: center;
+      .title{
+         font-size: 6rem;
+      }
+      p{
+         font-size: 1rem;
+         margin-top: 1rem;
+      }
+   }
+   .right{
+      display: none;
+   }
+  }
+}

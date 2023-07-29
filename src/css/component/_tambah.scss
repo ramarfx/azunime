@@ -1,0 +1,226 @@
+#tambah{
+   width: 50%;
+   max-width: 800px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   background-color: $primary-2;
+   transform: translate(-50%,-50%);
+   padding: 1.5rem;
+   border-radius: 10px;
+
+   .kembali{
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      padding: .5rem 1rem;
+      border-radius: 10px;
+      background-color: #2f2f2f;
+
+      i{
+         color: $text-secondary;
+      }
+   }
+
+   h2{
+      text-align: center;
+      color: white;
+      margin-bottom: 4rem;
+   }
+
+   .flex{
+      display: flex;
+      gap: 2rem;
+      
+      .image{
+         flex-basis: 200px;
+         flex-shrink: 0;
+         height: 300px;
+         background-color: $text-secondary;
+         background-size: cover;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 10px;
+         cursor: pointer;
+         overflow: hidden;
+         position: relative;
+
+         img{
+            display: block;
+            width: 100%;
+            height: 100%;
+         }
+
+         input{
+            display: none;
+         }
+         .tambah-file{
+            text-align: center;
+            color: white;
+            i{
+               font-size: 2rem;
+            }
+         }
+         .ubah-file{
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: 0.3s ease-out;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            flex-direction: column;
+         }
+      }
+      .image:hover{
+         .ubah-file{
+            opacity: 1;
+         }
+      }
+
+      .deskripsi{
+         width: 70%;
+
+         input{
+            padding: 0.75rem 1rem;
+            background-color: $primary-3;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 2rem;
+            width: 100%;
+         }
+         .select{
+            padding-right: 1rem;
+            background-color: $primary-3;
+            border-radius: 10px;
+         }
+         select{
+            padding: 0.75rem 1rem;
+            background-color: $primary-3;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            width: 100%;
+
+            option[disabled]{
+               color: $text-secondary;
+            }
+         }
+         select:focus{
+            outline: none;
+            border: none;
+         }
+         p{
+            color: #f83d3d;
+            font-size: 0.75rem;
+         }
+         ::placeholder{
+            color: $text-secondary;
+         }
+         input:focus{
+            outline: none;
+         }
+         input[type="number"]::-webkit-inner-spin-button,
+         input[type="number"]::-webkit-outer-spin-button {
+           -webkit-appearance: none;
+           margin: 0;
+         }
+         input[type="number"] {
+            -moz-appearance: textfield; /* Untuk Firefox */
+          }
+
+         button{
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Montserrat',sans-serif;
+            margin-top: 2rem;
+            margin-right: 1rem;
+            cursor: pointer;
+         }
+         
+         button[type=submit]{
+            background-color: $secondary;
+         }
+         button[name=hapus]{
+            background-color: #f83d3d;
+         }
+      }
+   }
+}
+
+//responsif design
+//Untuk tablet
+@media screen and (max-width: 940px) {
+  #tambah{
+   width: 80%;
+   top: 50%;
+   .flex{
+      flex-direction: column;
+      align-items: center;
+
+      .image{
+         flex-basis: 300px;
+         width: 200px;
+      }
+      .deskripsi{
+         width: 100%;
+      }
+   }
+  }
+}
+
+//Untuk handphone
+@media screen and (max-width: 576px) {
+   body{height: 100vh;}
+   #tambah{
+      width: 80%;
+      top: 55%;
+      h2{margin-bottom: 2rem;}
+      a{display: none;}
+      .flex{
+         flex-direction: column;
+         align-items: center;
+   
+         .image{
+            flex-basis: 250px;
+            width: 150px;
+
+            .tambah-file{
+               font-size: 12px;
+               i{font-size: 1.25rem;}
+            }
+         }
+         .deskripsi{
+            width: 100%;
+
+            input{
+               padding: .5rem 1rem;
+               margin-bottom: 1rem;
+            }
+            button{
+               padding: .75rem 1rem;
+               margin-top: 1rem;
+            }
+            p{
+               font-size: .5rem;
+               margin-top: .5rem;
+            }
+            ::placeholder{
+               font-size: .75rem;
+            }
+         }
+      }
+   }
+}

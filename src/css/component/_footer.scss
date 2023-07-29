@@ -1,0 +1,47 @@
+#footer{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   color: $text-secondary;
+   font-family: 'Montserrat',sans-serif;
+   width: 100%;
+   margin-top: 300px;
+   padding: 2rem;
+   font-size: 14px;
+
+   p{font-weight: 600;}
+
+   .sosmed{
+      flex-grow: 2;
+      text-align: center;
+      i{margin: 0 0.5rem;}
+      a{
+         color: $text-secondary;
+         text-decoration: none;
+      }
+   }
+   .right{
+      font-weight: 600;
+      display: flex;
+      gap: 2rem;
+   }
+
+   a{
+      color: $text-secondary;
+      text-decoration: none;
+   }
+   a:hover{
+      color: #ababab;
+   }
+}
+
+//responsive design
+//Untuk tablet
+@media screen and (max-width: 768px) {
+  #footer{
+   flex-direction: column-reverse;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+  }
+}

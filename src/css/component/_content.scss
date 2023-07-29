@@ -1,0 +1,350 @@
+#main{
+   padding-top: 1rem;
+   .flex{
+      display: flex;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: auto;
+      padding: 0 1rem;
+   }
+
+   .profile{
+      width: 300px;
+      background-color: $primary-2;
+      color: white;
+      height: 400px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .profile-edit{
+         position: absolute;
+         top: 0;
+         right: 0;
+         padding: 15px;
+         font-size: 1.35rem;
+         color: $text-secondary;
+         cursor: pointer;
+      }
+
+      .profile-txt{
+         margin: 1rem 0;
+      }
+
+      .profile-picture{
+         margin-top: -50px;
+         width: 130px;
+         height: 130px;
+         overflow: hidden;
+         border-radius: 50%;
+         border: 7px solid $primary-2;
+
+
+         img{
+            width: 100%;
+            object-fit:fill;
+            object-position:center top;
+         }
+      }
+
+      .profile-status{
+         background-color: $secondary;
+         padding: 10px 30px;
+         font-weight: 600;
+         border-radius: 10px;
+      }
+      .profile-login{
+         color: $text-secondary;
+         font-size: 14px;
+         font-weight: 600;
+      }
+      .profile-tambah{
+         padding: 0.5rem;
+
+         a{
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            
+            span{
+               margin-right: 0.5rem;
+            }
+
+            span i{
+               color: $secondary;
+               font-size: 1rem;
+            }
+            span i.fa-right-from-bracket{
+               color: #ff4d4d;
+            }
+         }
+      }
+
+   }
+
+   //anime list
+   .anime-list{
+      width: calc(100% - 315px);
+      border-radius: 10px;
+      background-color: $primary-2;
+      padding: 1.5rem;
+      padding-bottom: 3rem;
+      position: relative;
+
+      .genre-list{
+         overflow-x: auto;
+         ul{
+            display: flex;
+            gap: 4rem;
+            li{
+               list-style: none;
+               margin-bottom: 10px;
+               a{
+               color: $text-secondary;
+               white-space: nowrap;
+               text-decoration: none;
+               }
+            }
+            li:last-child{
+               margin-right: 0;
+            }
+            li:hover{
+               a{color: white;}
+            }
+         }
+      }
+
+      .genre-list::-webkit-scrollbar{
+         height: 5px;
+      }
+      .genre-list::-webkit-scrollbar-thumb{
+         background: #494949; 
+      }
+      .genre-list::-webkit-scrollbar-track {
+         background: #2f2f2f ;
+      }
+   }
+
+   .anime{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 15px;
+
+      .anime-inner{
+         flex-basis: 150px;
+         // max-width: calc(100%/6 - 1rem);
+         position: relative;
+
+         img{
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-position:center top;
+            vertical-align: middle;
+            transition: filter 0.3s ease-in-out;
+         }
+
+         .profile-edit{
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 20px;
+            z-index: 5;
+            font-size: 1rem;
+            color: $text-secondary;
+            opacity: 0;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+         }
+         .profile-edit:hover{
+            color: $secondary;
+         }
+
+         .overlay{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            position: absolute;
+            width: 100%;
+            padding: 1rem;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'poppins',sans-serif;
+            transition: opacity 0.3s, filter 0.3s ease-in-out;
+            
+
+            .episode{
+               padding: 5px 10px;
+               background-color: rgba(100, 100, 100, 0.508);
+               border-radius: 10px;
+               font-size: 14px;
+               white-space: nowrap;
+            }
+
+            .judul{
+               text-align: center;
+               font-size: 1rem;
+               font-weight: 600;
+               letter-spacing: 1px;
+               margin: 2px 0 5px 0;
+            }
+
+            .genre{
+               font-size: 12px;
+               color: #c5c5c5;
+            }
+            .play{
+               margin-top: 5px;
+               padding: 5px 20px;
+               background-color: rgba(100, 100, 100, 0.508);
+               border-radius: 10px;
+               font-size: 14px;
+               color: white;
+               font-weight: 600;
+               text-decoration: none;
+               white-space: nowrap;            
+            }
+            .play:hover{
+               background-color: $secondary;
+            }
+         }
+      }
+
+      .anime-inner:hover{
+         img{
+            filter: brightness(30%);
+         }
+         .overlay{
+            opacity: 1;
+         }
+         .profile-edit{
+            opacity: 1;
+         }
+      }
+
+   }
+
+   .pagination{
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      width: 100%;
+      text-align: center;
+
+      a, span{
+         color: $text-secondary;
+         text-decoration: none;
+         margin-right: 0.5rem;
+         font-weight: 600;
+         text-align: center;
+         font-size: 1rem;
+      }
+      a:hover{
+         color: #acacac;
+      }
+   }
+}
+
+//responsive design
+//Untuk tablet
+@media screen and (max-width: 768px) {
+   #main{
+      .flex{
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+   
+      .profile{
+         width: 400px;
+   
+         .profile-picture{
+            width: 180px;
+            height: 180px;
+            margin-top: -80px;
+         }
+      }
+   
+      .anime-list{
+         width: 100%;
+         margin-top: 1rem;
+
+         .genre-list{
+            overflow-x: auto;
+            ul{
+               scroll-behavior: smooth;
+               scroll-snap-type: x mandatory;
+               
+               li{
+                  margin-bottom: 10px;
+                  scroll-snap-align: start;
+                  font-size: .75rem;
+               }
+            }
+         }
+      }
+   }
+}
+
+//Untuk handphone
+@media screen and (max-width: 576px) {
+  #main{
+   .anime{
+      .anime-inner{
+         .overlay{
+            gap: 2px;
+            padding: 5px;
+            .episode{font-size: 12px;}
+            .judul{font-size: 12px;}
+            .play{font-size: 12px;}
+
+         }
+      }
+   }
+
+   .flex{
+      .profile{
+         width: 100%;
+      }
+
+      .anime-list{
+         .anime{
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+         }
+      }
+
+      .genre-list::-webkit-scrollbar{
+         height: 3px;
+      }
+   }
+  }
+}
+
+@media screen and (max-width: 330px) {
+   #main{
+    .flex{
+       .profile{
+          width: 100%;
+       }
+ 
+       .anime-list{
+          .anime{
+             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          }
+       }
+    }
+   }
+ }

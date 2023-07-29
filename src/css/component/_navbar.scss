@@ -1,0 +1,173 @@
+// navbar
+#navbar{
+   width: 100vw;
+   background-color: $primary;
+   color: white;
+   font-family: 'montserrat', sans-serif;
+   position: fixed;
+   z-index: 99;
+   .flex{
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo{
+         @extend %logo;
+      }
+      .hamburger{
+         font-size: 2rem;
+         display: none;
+      }
+
+      nav.navbar{
+         display: flex;
+         flex-wrap: nowrap;
+         align-items: center;
+         justify-content: space-between;
+         flex-grow: 10;
+
+         .nav-menu{
+            ul{
+               display: flex;
+               flex-direction: row;
+               list-style: none;
+               li{
+                  margin: 0 1rem;
+
+                  a{
+                     color: white;
+                     text-decoration: none;
+                     white-space: nowrap;
+                  }
+               }
+               li.dropdown{
+                  position: relative;
+
+
+                  button{
+                     font-size: 1rem;
+                     color: white;
+                     border: none;
+                     background: none;
+                     cursor: pointer;
+                     font-family: 'Montserrat', sans-serif;
+
+                     span i{
+                        transition: 0.2s ease-out;
+                     }
+                  }
+                  
+                  .dropdown-item{
+                     position: absolute;
+                     display: none;
+                     top: 160%;
+                     z-index: -1;
+                     flex-direction: column;
+                     background-color: $secondary;
+                     padding: 1rem 0;
+                     border-radius: 0 10px 10px 10px;
+                     width: 150px;
+
+                     a{
+                        display: inline-block;
+                        padding: 5px 1rem;
+                     }
+                     a:hover{
+                        background-color: #56d678;
+                     }
+                  }
+               }
+            }
+         }
+         .nav-user{
+            display: flex;
+            align-items: center;
+            input{
+               padding: 0.5rem;
+               border-radius: 10px;
+               background-color: #303030;
+               border: none;
+
+               color: white;
+            }
+            .icon{
+               display: flex;
+               align-items: center;
+            }
+            i{
+               margin: 0 1rem;
+            }
+            p{
+               color: $secondary;
+            }
+            i.fa-user{
+               font-size: 1rem;
+            }
+         }
+      }
+   }
+
+}
+
+//responsive design
+.active{
+   display: flex !important;
+}
+
+//Untuk tablet
+@media screen and (max-width: 940px) {
+  #navbar{
+   .flex{
+      .hamburger{
+         display: block;
+      }
+      nav.navbar{
+         display: none;
+         position: absolute;
+         align-items: flex-start;
+         top: 105%;
+         right: 0;
+         background-color: $primary;
+         padding: 1rem;
+         border-radius: 1rem 0 1rem 1rem;
+         flex-direction: column;
+         border: 1px solid $secondary;
+
+         .nav-menu{
+            ul{
+               flex-direction: column;
+
+               li{
+                  margin: 1rem 0rem;
+               }
+               li.dropdown{
+                  .dropdown-item{
+                     left: -166px;
+                     top: 100%;
+                     border-radius: 10px 0 10px 10px;
+                  }
+               }
+            }
+         }
+         .nav-user{
+            flex-direction: column-reverse;
+
+            .icon{
+               width: 100%;
+               flex-direction: row;
+               align-items: center;
+            }
+            i{
+               margin: 1rem 1rem 1rem 0;
+            }
+         }
+      }
+   }
+  }
+}
+
+//animasi icon dropdown
+.dropdown-active{
+   transform: rotate(180deg);
+}
